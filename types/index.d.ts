@@ -60,7 +60,7 @@ declare type Account = {
   type: string;
   subtype: string;
   appwriteItemId: string;
-  sharableId: string;
+  shareableId: string;
 };
 
 declare type Transaction = {
@@ -153,7 +153,7 @@ declare interface HeaderBoxProps {
   type?: "title" | "greeting";
   title: string;
   subtext: string;
-  user?: string;
+  user?: User;
 }
 
 declare interface MobileNavProps {
@@ -175,7 +175,7 @@ declare interface PaginationProps {
 
 declare interface PlaidLinkProps {
   user: User;
-  variant?: "primary" | "ghost";
+  variant?: "primary" | "ghost" | "mobile";
   dwollaCustomerId?: string;
 }
 
@@ -207,6 +207,7 @@ declare interface TotlaBalanceBoxProps {
   accounts: Account[];
   totalBanks: number;
   totalCurrentBalance: number;
+  user?: User;
 }
 
 declare interface FooterProps {

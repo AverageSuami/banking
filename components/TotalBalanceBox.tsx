@@ -1,10 +1,11 @@
 import React from 'react'
 import AnimatedCounter from './AnimatedCounter'
 import DoughnutChart from './DoughnutChart'
+import PlaidLink from './PlaidLink'
 
 
 const TotalBalanceBox = ({
-    accounts = [], totalBanks, totalCurrentBalance
+    accounts = [], totalBanks, totalCurrentBalance, user
 }: TotlaBalanceBoxProps) => {
   return (
     <section className='total-balance'>
@@ -24,6 +25,9 @@ const TotalBalanceBox = ({
                     <AnimatedCounter amount={totalCurrentBalance}/>
                 </div>
             </div>
+        </div>
+        <div className='flex flex-col gap-2 md:hidden'>
+            {user && <PlaidLink user={user} variant='mobile'/>}
         </div>
     </section>
   )
